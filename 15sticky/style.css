@@ -1,0 +1,73 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.wrap{}
+.top_box{
+    position: relative;
+    height: 100vh;
+    background: #080808;
+}
+.top_box h2{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    color: #333;
+    font-size: 80px;
+}
+
+.fix_motion{background: blue;}
+.fix_motion .fix_wrap{height: 400vh;}
+.fix_motion .device_fix{
+    /* position: sticky;는 평소에는 position: static;처럼 행동하다가, 
+    영역에 들어오면 position: fixed;처럼 행동 / left값은 적용이 안돼*/
+    position: sticky;
+    top: 0;
+}
+.fix_motion .inner{
+    overflow: hidden;
+    height: 100vh;
+}
+.fix_motion .slide_wrap{
+    position: relative;
+    height: 100vh;
+}
+.fix_motion .slide{
+    position: absolute; /* 얘가 붕 뜨게되면 높이값이 없어지니까 부모한테 height 주기 */
+    width: 400vw;
+    transition: 0.5s;
+}
+.fix_motion .slide .child{
+    position: relative;
+    float: left; /* slide가 붕 떠있으니까 딱히 깨지지는 않아 */
+    width: 100vw;
+    height: 100vh;
+}
+.fix_motion .slide .child h2{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(100%,-50%);
+    color: #333;
+    font-size: 50px;
+    opacity: 0;
+    transition: 0.5s 0.6s;
+}
+.fix_motion .slide .child1 h2{
+    transition: 0.5s 0.2s;
+}
+.fix_motion .slide .child1{background: skyblue;}
+.fix_motion .slide .child2{background: pink;}
+.fix_motion .slide .child3{background: yellow;}
+.fix_motion .slide .child4{background: greenyellow;}
+
+.fix_motion .slide .child.active h2{
+    transform: translate(-50%,-50%);
+    opacity: 1;
+}
+
+

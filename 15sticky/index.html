@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sticky</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- sticky를 사용할 때는 조상에게 overflow: hidden이 있으면 안되고, 꼭 필요한 경우, 자식에게 overflow: hidden; 처리 해야 돼 / 형제는 상관x -->
+    <div class="wrap">
+        <section class="top_box">
+            <h2>제목입니다</h2>
+        </section>
+        <section class="fix_motion">
+            <div class="fix_wrap">
+                <div class="device_fix">
+                    <div class="inner">
+                        <div class="slide_wrap">
+                            <div class="slide">
+                                <div class="child child1">
+                                    <h2>child1</h2>
+                                </div><!-- child1 -->
+                                <div class="child child2">
+                                    <h2>child2</h2>
+                                </div><!-- child2 -->
+                                <div class="child child3">
+                                    <h2>child3</h2>
+                                </div><!-- child3 -->
+                                <div class="child child4">
+                                    <h2>child4</h2>
+                                </div><!-- child4 -->
+                            </div><!-- slide -->
+                        </div><!-- slide_wrap -->
+                    </div><!-- inner -->
+                </div><!-- device_fix -->
+            </div><!-- fix_wrap -->
+        </section><!-- fix_motion -->
+        <section class="bottom" 
+                 style="height: 100vh; 
+                        text-align: center; 
+                        padding-top: 30vh; 
+                        box-sizing: border-box;">아래페이지</section>
+
+    </div><!-- wrap -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
